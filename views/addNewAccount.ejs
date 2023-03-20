@@ -24,10 +24,6 @@
     <h1>Password Keeper</h1>
   </header>
 
-
-
-
-
   <main class="main-choose-password-creation">
 
     <section class="organization-and-categories">
@@ -46,8 +42,8 @@
       <h2>Add a New Account</h2>
 
       <div class="btns-choose-password-creation">
-        <button class="btn-choose-pw">Choose Your Own Password</button>
-        <button class="btn-generate-pw">Generate a Random Password </button>
+        <button class="btn-choose-pw" id="choose-your-own-pass-btn">Choose Your Own Password</button>
+        <button class="btn-generate-pw" id="generate-random-pass-btn">Generate a Random Password </button>
       </div>
 
     </div>
@@ -62,6 +58,12 @@
       });
       $('#add-new-account-btn').on('click', () => {
         window.location.href = '/addNewAccount';
+      });
+      $('#choose-your-own-pass-btn').on('click', () => {
+        window.location.href = '/makeYourOwnPassword';
+      });
+      $('#generate-random-pass-btn').on('click', () => {
+        window.location.href = '/generateRandomPassword';
       });
 
     })

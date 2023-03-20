@@ -50,6 +50,8 @@ const allAccounts = require('./routes/allAccounts');
 const updateAccount = require('./routes/updateAccount');
 const newPassword = require('./routes/addNewAccount');
 const addNewAccount = require('./routes/addNewAccount');
+const makeYourOwnPassword = require('./routes/makeYourOwnPassword');
+const generateRandomPassword = require('./routes/generateRendomPassword');
 
 
 
@@ -64,6 +66,8 @@ app.use('/allAccounts', allAccounts);
 app.use('./updateAccount', updateAccount);
 app.use('./newPassword', newPassword);
 app.use('/addNewAccount', addNewAccount);
+app.use('/makeYourOwnPassword', makeYourOwnPassword);
+app.use('/generateRandomPassword', generateRandomPassword);
 
 
 // Note: mount other resources here, using the same pattern above
