@@ -5,9 +5,19 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
+const { Pool } = require('pg');
+
+const pool = new Pool({
+  user: 'labber',
+  password: 'labber',
+  host: 'localhost',
+  database: 'midterm'
+});
 
 const PORT = process.env.PORT || 8080;
 const app = express();
+
 
 app.set('view engine', 'ejs');
 
@@ -16,6 +26,10 @@ app.set('view engine', 'ejs');
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['secretkey']
+}));
 app.use(
   '/styles',
   sassMiddleware({
@@ -31,6 +45,15 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const userAuth = require('./routes/auth');
+const allAccounts = require('./routes/allAccounts');
+const updateAccount = require('./routes/updateAccount');
+const newPassword = require('./routes/addNewAccount');
+const addNewAccount = require('./routes/addNewAccount');
+const makeYourOwnPassword = require('./routes/makeYourOwnPassword');
+const generateRandomPassword = require('./routes/generateRendomPassword');
+
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -38,7 +61,17 @@ const usersRoutes = require('./routes/users');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/auth', userAuth);
+app.use('/allAccounts', allAccounts);
+app.use('./updateAccount', updateAccount);
+app.use('./newPassword', newPassword);
+app.use('/addNewAccount', addNewAccount);
+app.use('/makeYourOwnPassword', makeYourOwnPassword);
+app.use('/generateRandomPassword', generateRandomPassword);
+
+
 // Note: mount other resources here, using the same pattern above
+
 
 // Home page
 // Warning: avoid creating more routes in this file!
@@ -47,6 +80,9 @@ app.use('/users', usersRoutes);
 app.get('/', (req, res) => {
   res.render('index');
 });
+
+
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

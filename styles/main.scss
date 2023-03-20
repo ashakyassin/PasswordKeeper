@@ -1,18 +1,39 @@
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-
-  background: rgb(163, 208, 219);
-  background: linear-gradient(
-    227deg,
-    rgba(163, 208, 219, 1) 0%,
-    rgba(163, 176, 219, 1) 20%,
-    rgba(163, 173, 219, 1) 34%,
-    rgba(163, 219, 208, 1) 59%,
-    rgba(163, 208, 219, 1) 74%,
-    rgba(163, 208, 219, 1) 100%
-  );
+  color: white;
 }
+
+.homepage {
+  height: 100vh;
+  background-image: url('/assets/headerPw.jpg');
+  background-position: 15rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: rgb(0, 3, 0);
+  padding-left: 5rem;
+
+
+  h1 {
+    color: white;
+    font-size: 4.5rem;
+    padding-top: 20%;
+    padding-bottom: 1rem;
+  }
+  .homepage-login-btn {
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 2.3rem;
+    border-radius: 1rem;
+    padding: 0.4rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+}
+
+.homepage-login-btn:hover {
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+}
+
+

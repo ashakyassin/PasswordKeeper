@@ -1,0 +1,34 @@
+header {
+  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  background-color: #050001;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  border-bottom: 2px solid white;
+  padding-left: 2rem;
+
+  .logged-in-user-container {
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+    font-size: 1.3rem;
+
+    .sign-out-btn {
+      background-color: black;
+      border: 2px solid white;
+      border-radius: 1rem;
+      font-size: 1.2rem;
+      color: white;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+    }
+    .sign-out-btn:hover {
+      background-color: white;
+      border: none;
+      color: black;
+    }
+  }
+}

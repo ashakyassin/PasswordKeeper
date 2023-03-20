@@ -1,0 +1,109 @@
+.main-display-all-accounts {
+  font-size: 1.2rem;
+  display: flex;
+
+  .organization-and-categories {
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    background-color: #008be8;
+    height: 130vh;
+    width: 20%;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    .organization-name {
+      border-bottom: 2px solid white;
+      padding: 2rem 0 2rem 1.5rem;
+    }
+    .all-or-add-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem 0 0 1.5rem;
+      button {
+        background-color: transparent;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.4rem;
+        padding-bottom: 0.5rem;
+      }
+      button:hover {
+        color: white;
+      }
+    }
+  }
+
+  .all-accounts {
+    width: 80%;
+    .h2-available-accounts {
+      padding-top: 2rem;
+      text-align: center;
+    }
+    .all-accounts-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 95%;
+      margin: 0 auto;
+    }
+    .account {
+      height: 16rem;
+      width: 18%;
+      border: 2px solid black;
+      border-radius: 2rem;
+      padding: 2rem 1.8rem 2.3rem;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .account-password {
+        border: none;
+        font-size: 1.4rem;
+        width: 70%;
+      }
+    }
+    .account:hover {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.account-icon-btn-container {
+  border-top: 2px solid  rgb(45, 163, 241);
+  width: 100%;
+  padding-top: 1rem;
+}
+.account-icon-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  :hover {
+    color:  #219df0;;
+  }
+}
+
+
+.edit-form {
+  input {
+    border: 2px solid rgb(4, 187, 243);
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    width: 90%;
+  }
+  label {
+    font-size: 1.1rem;
+  }
+  .last {
+    margin-bottom: 1rem;
+  }
+}
+
+.website-value,
+.username-value,
+.password-value {
+    padding-bottom: 1rem;
+}
+
+
